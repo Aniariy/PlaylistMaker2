@@ -1,5 +1,7 @@
 package com.example.playlistmaker
 
+
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -11,19 +13,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val search_button = findViewById<Button>(R.id.search_button)
-        val library_button = findViewById<Button>(R.id.library_button)
+        val lybrary_button = findViewById<Button>(R.id.lybrary_button)
         val setting_button = findViewById<Button>(R.id.setting_button)
 
-        val ButtonClickListener1: View.OnClickListener = object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                Toast.makeText(this@MainActivity, "Нажали на кнопку!", Toast.LENGTH_SHORT).show()
-            }
+        search_button.setOnClickListener {
+            val searchIntent = Intent(this, SearchActivity::class.java)
+            startActivity(searchIntent)
         }
-        val ButtonClickListener2: View.OnClickListener = View.OnClickListener { Toast.makeText(this@MainActivity, "Нажали на картинку!", Toast.LENGTH_SHORT).show() }
+        lybrary_button.setOnClickListener {
+            val searchIntent = Intent(this, LybraryActivity::class.java)
+            startActivity(searchIntent)
+        }
+        setting_button.setOnClickListener {
+            val settingIntent = Intent(this, SettingsActivity::class.java)
+            startActivity(settingIntent)
+        }
 
-        search_button.setOnClickListener(ButtonClickListener1)
-        library_button.setOnClickListener(ButtonClickListener2)
-        setting_button.setOnClickListener(ButtonClickListener2)
 
     }
 }

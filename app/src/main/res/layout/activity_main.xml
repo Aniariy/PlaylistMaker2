@@ -41,7 +41,7 @@
         android:text="@string/Media_Library"
         android:textColor="@color/black"
         android:textSize="22sp"
-        android:id="@+id/library_button"
+        android:id="@+id/lybrary_button"
         app:cornerRadius="16dp"
         app:icon="@drawable/media_library"
         app:iconGravity="textStart"
